@@ -6,11 +6,11 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 17:00:45 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/02/27 20:06:34 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/02/27 22:12:45 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c <= 'z' && c >= 'a')
 		return (c + 'A' - 'a');

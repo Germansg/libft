@@ -1,18 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 18:29:52 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/02/27 22:13:08 by ggladkov         ###   ########.fr       */
+/*   Created: 2017/02/27 21:25:01 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/02/27 22:14:58 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dst, const char *src)
+#include "libft.h"
+
+void	ft_putnbr(int n)
 {
-	while (*src)
-		*dst++ = *src++;
-	return (dst);
+	if (n == -2147483648)
+	{
+		ft_putstr("-2147483648");
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = n * -1;
+	}
+	if (n < 10)
+		ft_putchar(n + '0');
+	else
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
+}
+
+int		main(void)
+{
+	ft_putnbr(-2147483648);
 }
