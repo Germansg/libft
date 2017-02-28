@@ -6,13 +6,13 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 12:28:07 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/02/27 17:45:27 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/02/27 20:07:20 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	tolower(int c)
+int	ft_tolower(int c)
 {
 	if (isupper(c) == 1)
 		return (c + 'a' - 'A');
