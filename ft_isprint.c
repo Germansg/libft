@@ -6,8 +6,14 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 17:42:37 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/02/27 18:36:48 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/02/27 19:50:45 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "l
+int	ft_isprint(int c)
+{
+	if (c >= ' ' && c <= '~')
+		return (1);
+	else
+		return (0);
+}
