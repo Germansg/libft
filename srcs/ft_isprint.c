@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 18:21:48 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/02/27 22:11:45 by ggladkov         ###   ########.fr       */
+/*   Created: 2017/02/27 17:42:37 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/02/27 19:50:45 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strdup(const char *s1)
+int	ft_isprint(int c)
 {
-	char	*s2;
-
-	s2 = (char*)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (s2 == NULL)
-		return (NULL);
+	if (c >= ' ' && c <= '~')
+		return (1);
 	else
-		return (ft_strcpy(s2, s1));
-}
-
-int		main(void)
-{
-	char s1[20] = "check check";
-	char *s2;
-	s2 = ft_strdup(s1);
-	printf("%s", s2);
+		return (0);
 }

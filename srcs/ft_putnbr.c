@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 18:21:48 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/02/27 22:11:45 by ggladkov         ###   ########.fr       */
+/*   Created: 2017/02/27 21:25:01 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/02/27 23:49:44 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_putnbr(int n)
 {
-	char	*s2;
-
-	s2 = (char*)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (s2 == NULL)
-		return (NULL);
+	if (n == -2147483648)
+	{
+		ft_putstr("-2147483648");
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = n * -1;
+	}
+	if (n < 10)
+		ft_putchar(n + '0');
 	else
-		return (ft_strcpy(s2, s1));
-}
-
-int		main(void)
-{
-	char s1[20] = "check check";
-	char *s2;
-	s2 = ft_strdup(s1);
-	printf("%s", s2);
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
 }

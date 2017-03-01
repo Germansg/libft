@@ -25,8 +25,10 @@ char	*ft_strdup(const char *s1)
 
 int		main(void)
 {
-	char s1[20] = "check check";
+	char s1[20];
 	char *s2;
+
+	s1 = "check check";
 	s2 = ft_strdup(s1);
 	printf("%s", s2);
 }

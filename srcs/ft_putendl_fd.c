@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 18:21:48 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/02/27 22:11:45 by ggladkov         ###   ########.fr       */
+/*   Created: 2017/02/28 00:20:42 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/02/28 00:39:43 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_putendl_fd(char const *s, int fd)
 {
-	char	*s2;
-
-	s2 = (char*)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (s2 == NULL)
-		return (NULL);
-	else
-		return (ft_strcpy(s2, s1));
-}
-
-int		main(void)
-{
-	char s1[20] = "check check";
-	char *s2;
-	s2 = ft_strdup(s1);
-	printf("%s", s2);
+	while (*s)
+		write(fd, s++, 1);
+	write(fd, "\n", 1);
 }
