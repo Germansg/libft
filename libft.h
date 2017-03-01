@@ -23,6 +23,8 @@ char	*ft_strcpy(char *dst, const char *src);
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);//look over
 int		ft_isprint(int c);
+int             ft_isdigit(int c);
+int             ft_isascii(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 
