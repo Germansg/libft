@@ -6,7 +6,7 @@
 #    By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/27 18:53:20 by ggladkov          #+#    #+#              #
-#    Updated: 2017/02/27 23:32:55 by ggladkov         ###   ########.fr        #
+#    Updated: 2017/02/28 01:24:37 by ggladkov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,4 +18,6 @@ SRCS = *.c
 
 CC = gcc
 
-all: $(CC) $(FLAGS) -o $(NAME) $(SRC) 
+HEADER = libft.h
+
+all:
