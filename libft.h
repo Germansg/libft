@@ -19,6 +19,7 @@
 # include <stdio.h>
 
 void	*ft_memset(void *str, int c, size_t len);
+void	ft_bzero(void *s, size_t n);
 char	*ft_strcpy(char *dst, const char *src);
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
