@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/02 17:59:16 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/02 18:00:49 by ggladkov         ###   ########.fr       */
+/*   Created: 2017/03/04 19:25:19 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/03/04 23:14:52 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+char *ft_strstr(const char *big, const char *little)
 {
 	int i;
 	int j;
 
 	i = 0;
 	j = 0;
-	while (s1[i])
-		i++;
-	while (s2[j])
+	while (big[i] != '\0')
 	{
-		s1[i] = s2[j];
+		j = 0;
+		while (big[i] == little[j] && little[j])
+		{
+			i++;
+			j++;
+			if (little[j + 1] == '\0')
+				return ((char *)little);
+		}
 		i++;
-		j++;
 	}
-	i++;
-	s1[i] = '\0';
-	return (s1);
-}
+	return (NULL);
+}	

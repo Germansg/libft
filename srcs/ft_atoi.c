@@ -1,33 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/02 17:59:16 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/02 18:00:49 by ggladkov         ###   ########.fr       */
+/*   Created: 2017/03/04 19:12:14 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/03/04 21:42:12 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+int	ft_atoi(const char *str)
 {
-	int i;
-	int j;
+	int neg;
+	int num;
 
-	i = 0;
-	j = 0;
-	while (s1[i])
-		i++;
-	while (s2[j])
+	neg = 1;
+	num = 0;
+	while (*str == ' ')
+		str++;
+	if (*str == '-')
 	{
-		s1[i] = s2[j];
-		i++;
-		j++;
+		neg = -1;
+		str++;
 	}
-	i++;
-	s1[i] = '\0';
-	return (s1);
+	if (*str == '+')
+		str++;
+	while (*str <= '9' && *str >= '0')
+	{
+		num = num * 10 + (*str - '0');
+		str++;
+	}
+	return (num * neg);
+}
+
+int main(int argc, char **argv)
+{
+	if (argc >= 0)
+		ft_putnbr(ft_atoi(argv[1]));
+	return 0;
 }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/02 17:59:16 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/02 18:00:49 by ggladkov         ###   ########.fr       */
+/*   Created: 2017/03/02 18:39:40 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/03/04 22:10:55 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+char *ft_strncat(char *s1, const char *s2, size_t n)
 {
 	int i;
 	int j;
@@ -21,13 +21,15 @@ char	*ft_strcat(char *s1, const char *s2)
 	j = 0;
 	while (s1[i])
 		i++;
-	while (s2[j])
-	{
-		s1[i] = s2[j];
-		i++;
-		j++;
-	}
-	i++;
-	s1[i] = '\0';
-	return (s1);
+	while (s2[j] || j < (int)n)
+		s1[i++] = s2[j++];
+	return(s1);
+}
+
+int main(void)
+{
+	char str1[50] = "this is stupid";
+	char str2[50] = "but whatever.";
+	ft_strncat(str1, str2, 10);
+	ft_putstr(str1);
 }

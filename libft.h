@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 12:53:41 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/02 18:31:38 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/03/04 21:53:45 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ char	*ft_strcpy(char *dst, const char *src);
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 char	*ft_strcat(char *s1, const char *s2);
+char	*ft_strncat(char *s1, const char *s2, size_t n);
 int		ft_isprint(int c);
 int		ft_isdigit(int c);
+int		ft_isalpha(int c);
+int		ft_atoi(const char c);
 int		ft_isascii(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);

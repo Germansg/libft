@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/02 17:59:16 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/02 18:00:49 by ggladkov         ###   ########.fr       */
+/*   Created: 2017/02/27 21:25:01 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/02/27 23:49:44 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+void	ft_putnbr(int n)
 {
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	while (s1[i])
-		i++;
-	while (s2[j])
+	if (n == -2147483648)
 	{
-		s1[i] = s2[j];
-		i++;
-		j++;
+		ft_putstr("-2147483648");
+		return ;
 	}
-	i++;
-	s1[i] = '\0';
-	return (s1);
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = n * -1;
+	}
+	if (n < 10)
+		ft_putchar(n + '0');
+	else
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
 }
