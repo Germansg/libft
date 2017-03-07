@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 12:53:41 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/04 21:53:45 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/03/07 14:47:57 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(const char *s, int fd);
 void	ft_putstr(char *str);
-int 	isupper(int c);
+int		isupper(int c);
 
 #endif

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/03/07 14:29:30 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/03/07 14:31:17 by ggladkov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int i;
 
@@ -9,8 +21,8 @@ char *ft_strchr(const char *s, int c)
 	{
 		if (s[i] == (char)c)
 		{
-				s = s + i;
-		return((char *)s);
+			s = s + i;
+			return ((char *)s);
 		}
 		i++;
 	}
