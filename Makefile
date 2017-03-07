@@ -16,8 +16,26 @@ FLAGS = -Wall -Wextra -Werror
 
 SRCS = *.c
 
+OBJ = *.o
+
 CC = gcc
 
 HEADER = libft.h
 
-all:
+$(NAME):
+	$(CC) $(FLAGS) -c $? $(SRCS) $(HEADER)
+	ar rc $(NAME) $? $(OBJ)
+	ranlib $(NAME)
+
+all: $(NAME)
+
+clean: 
+	rm -f $(OBJ)
+
+fclean:
+	rm -f $(OBJ) 
+	rm -f $(NAME)
+
+re:
+	fclean 
+	all	

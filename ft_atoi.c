@@ -35,10 +35,3 @@ int	ft_atoi(const char *str)
 	}
 	return (num * neg);
 }
-
-int main(int argc, char **argv)
-{
-	if (argc >= 0)
-		ft_putnbr(ft_atoi(argv[1]));
-	return 0;
-}
