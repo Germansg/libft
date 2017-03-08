@@ -16,20 +16,32 @@ char	*ft_strstr(const char *big, const char *little)
 {
 	int i;
 	int j;
+	int mark;
 
 	i = 0;
 	j = 0;
+	if (*little == '\0')
+			return ((char *)big);
 	while (big[i] != '\0')
 	{
 		j = 0;
-		while (big[i] == little[j] && little[j])
+		if (big[i] == little [j])
 		{
-			i++;
-			j++;
-			if (little[j + 1] == '\0')
-				return ((char *)little);
+			mark = i;
+			while (big[i] == little[j] && little[j])
+			{
+				i++;
+				j++;
+				if (little[j + 1] == '\0')
+					return ((char *)big + mark);
+			}
 		}
 		i++;
 	}
 	return (NULL);
+}
+
+int		main(void)
+{
+	 char haystack[40] = "kfjdslkfjflkjsd   "; const char needle[] = ""; printf("my strstr   :%s\ntheir strstr:%s\n", ft_strstr(haystack, needle), strstr(haystack, needle));
 }

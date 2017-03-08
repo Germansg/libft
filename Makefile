@@ -12,30 +12,29 @@
 
 NAME = libft.a
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -I. -c
 
 SRCS = *.c
 
-OBJ = *.o
+OBJ = $(SRCS:%.c=%.o)
 
 CC = gcc
 
 HEADER = libft.h
 
-$(NAME):
-	$(CC) $(FLAGS) -c $? $(SRCS) $(HEADER)
-	ar rc $(NAME) $? $(OBJ)
+$(NAME): 
+	$(CC) $(FLAGS) $(SRCS) $(HEADER)
+	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 all: $(NAME)
 
+fclean:	clean
+		rm -f $(NAME) 
+
 clean: 
-	rm -f $(OBJ)
-
-fclean:
 	rm -f $(OBJ) 
-	rm -f $(NAME)
 
-re:
-	fclean 
-	all	
+re:	fclean all
+
+.PHONY: clean fclean re
