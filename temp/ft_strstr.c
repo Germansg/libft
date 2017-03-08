@@ -40,3 +40,8 @@ char	*ft_strstr(const char *big, const char *little)
 	}
 	return (NULL);
 }
+
+int		main(void)
+{
+	 char haystack[40] = "hello"; const char needle[] = "hello"; printf("my strstr   :%s\ntheir strstr:%s\n", ft_strstr(haystack, needle), strstr(haystack, needle));
+}
