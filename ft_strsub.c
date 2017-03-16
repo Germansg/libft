@@ -3,11 +3,16 @@
 char *ft_strsub(char const *s, unsigned int start, size_t len)
 {
 		unsigned int i;
-		 char *fresh_string;
+		char *freshy_fresh;
 
 		 i = 0;
-		 fresh_string = (char *)malloc(sizeof(*fresh_string) * (len + 1);
-			 if (!fresh_string)
+		 freshy_fresh = (char *)malloc(sizeof(char) * (len + 1));
+			 if (!freshy_fresh)
 				 return (NULL);
-				while ( 
-
+				while (s[i] && start < len)
+				{
+					freshy_fresh[start] = s[i];
+					start++;
+				}
+	return (freshy_fresh);
+}

@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/07 14:29:30 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/16 08:18:11 by ggladkov         ###   ########.fr       */
+/*   Created: 2017/03/16 08:30:03 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/03/16 08:37:56 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
+	char	*freshy_fresh;
+	int		size1;
+	int		size2;
 
-	i = 0;
-	while (s[i])
+	size1 = ft_strsize((char *)s1);
+	size2 = ft_strsize((char *)s2);
+	
+	freshy_fresh = (char *)malloc(sizeof(char) * (size1 + size2));
+		if (!freshy_fresh)
+		return (NULL);
+	while (*s1)
 	{
-		if (s[i] == (char)c)
-		{
-			s = s + i;
-			return ((char *)s);
-		}
-		i++;
+		*freshy_fresh = *s1;
+		freshy_fresh++;
+		s1++;
 	}
-	return (NULL);
+	while (*s2)
+	{
+		*freshy_fresh = *s2;
+		freshy_fresh++;
+		s2++;
+	}
+	return (freshy_fresh);
 }
