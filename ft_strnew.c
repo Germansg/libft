@@ -2,8 +2,9 @@
 
 char *ft_strnew(size_t size)
 {
-		char *str;
+		char *new;
 
-		str = (char *)malloc(size);
-		ft_bzero(str)
-		
+		new = (char *)malloc(size);
+		ft_bzero(new, size);
+	return (new);
+}
