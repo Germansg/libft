@@ -25,14 +25,3 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 		s1[i++] = s2[j++];
 	return (s1);
 }
-
-int		main(void)
-{
-	char str1[50];
-	char str2[50];
-
-	*str2 = "but whatever.";
-	*str1 = "this is stupid";
-	ft_strncat(str1, str2, 10);
-	ft_putstr(str1);
-}
