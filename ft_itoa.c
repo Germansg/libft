@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggladkov <ggladkov@42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/20 19:58:34 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/20 20:09:42 by ggladkov         ###   ########.fr       */
+/*   Created: 2017/03/21 08:28:49 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/03/21 10:59:56 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+int		my_get_length(int  nbr)
 {
-	int unsigned	i;
-	char			*freshy_fresh;
+		int length;
 
-	i = 0;
-	freshy_fresh = (char *)malloc(sizeof(char) * (len + 1));
-	if (!freshy_fresh)
-		return (NULL);
-	while (s[i] && start < len)
-	{
-		freshy_fresh[start] = s[i];
-		start++;
-	}
-	return (freshy_fresh);
+		length = 0;
+		while (nbr != 0)
+		{
+			nbr /= 10;
+			length++;
+		}
+	return (length);
 }
+
+char *ft_itoa(int n)
+{
+		char *fresh;
+		int neg;
+		int length;
+
+		neg = 0;
+		nbr = n;
+		length = my_get_length(n);
+		fresh = (char *)malloc(sizeof(char) * (length));
+		if (!fresh)
+			return (NULL);
+		while (n != 0)
+		{
+				*fresh = 

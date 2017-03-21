@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/04 19:25:19 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/07 14:50:30 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/03/20 20:16:59 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,4 @@ char	*ft_strstr(const char *big, const char *little)
 		i++;
 	}
 	return (NULL);
-}
-
-int		main(void)
-{
-	 char haystack[40] = "hello"; const char needle[] = "hello"; printf("my strstr   :%s\ntheir strstr:%s\n", ft_strstr(haystack, needle), strstr(haystack, needle));
 }
