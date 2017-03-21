@@ -1,14 +1,85 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/03/21 15:20:21 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/03/21 16:47:57 by ggladkov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char **ft_strsplit(char const *s, char c)
+void	ft_putchar(char c)
 {
-		char** freshy_fresh;
-		int size_of_s;
+	write(1, &c, 1);
+}
 
-		size_of_s = ft_strlen(s);
+int	ft_wrdcount(const char *str)
+{
+	size_t i;
+	int count;
 
-		freshy_fresh = (char **)malloc(sizeof(char) * (size_of_s));
-		if (!freshy_fresh)
-			return (NULL);
-		
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		if (ft_isalpha(str[i]) == 1)
+		{
+		  count++;
+			while (ft_isalpha(str[i]) == 1)
+				i++;
+		}
+		else
+			i++;
+	}
+	return (count);
+}
 
+int	ft_chrcount(const char *str)
+{
+	size_t i;
+	int count;
+
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		if (ft_isalpha(str[i]) == 1)
+			count++;
+		else
+			i++;
+	}
+	return (count);
+}
+
+
+char **ft_strsplit(char const *s, char *c)
+{
+	int i;
+	int w;
+	int l;
+	char **new;
+
+	i = 0;
+	w = ft_wrdcount(s);
+	l = ft_chrcount(s);
+	new = (char **)malloc(sizeof(char) * w * l);
+	if (!new)
+		return (NULL);
+	while (s[i++])
+	{
+		if (s[i] != *c)
+			new[w][l] = s[i];
+		else if (s[i] == *c)
+		{
+			w++;
+			l = 0;
+			while (s[i] == *c)
+				i++;
+		}
+	}
+	return (new);
+}
