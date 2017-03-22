@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 15:20:21 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/21 16:47:57 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/03/21 21:28:26 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	ft_wrdcount(const char *str)
+int		ft_wrdcount(const char *str)
 {
 	size_t i;
 	int count;
@@ -28,7 +28,7 @@ int	ft_wrdcount(const char *str)
 	{
 		if (ft_isalpha(str[i]) == 1)
 		{
-		  count++;
+			count++;
 			while (ft_isalpha(str[i]) == 1)
 				i++;
 		}
@@ -38,7 +38,7 @@ int	ft_wrdcount(const char *str)
 	return (count);
 }
 
-int	ft_chrcount(const char *str)
+int		ft_chrcount(const char *str)
 {
 	size_t i;
 	int count;
@@ -55,8 +55,7 @@ int	ft_chrcount(const char *str)
 	return (count);
 }
 
-
-char **ft_strsplit(char const *s, char *c)
+char	**ft_strsplit(char const *s, char *c)
 {
 	int i;
 	int w;

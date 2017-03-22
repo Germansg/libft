@@ -1,12 +1,110 @@
+Norme: ./ft_strqu.o
+Warning: Not a valid file
+Norme: ./ft_strnew.o
+Warning: Not a valid file
+Norme: ./ft_strmapi.o
+Warning: Not a valid file
 Norme: ./norm.txt
+Warning: Not a valid file
+Norme: ./ft_strjoin.o
+Warning: Not a valid file
+Norme: ./ft_strncpy.o
+Warning: Not a valid file
+Norme: ./ft_strdup.o
+Warning: Not a valid file
+Norme: ./ft_strchr.o
+Warning: Not a valid file
+Norme: ./ft_putendl_fd.o
+Warning: Not a valid file
+Norme: ./ft_atoi.o
+Warning: Not a valid file
+Norme: ./temp/libft.h.gch
+Warning: Not a valid file
+Norme: ./ft_isalpha.o
+Warning: Not a valid file
+Norme: ./ft_strdel.o
+Warning: Not a valid file
+Norme: ./ft_putendl.o
+Warning: Not a valid file
+Norme: ./ft_isascii.o
 Warning: Not a valid file
 Norme: ./Makefile
 Warning: Not a valid file
+Norme: ./ft_strcat.o
+Warning: Not a valid file
+Norme: ./ft_memset.o
+Warning: Not a valid file
+Norme: ./ft_isprint.o
+Warning: Not a valid file
+Norme: ./ft_itoa.o
+Warning: Not a valid file
+Norme: ./ft_putnbr.o
+Warning: Not a valid file
+Norme: ./ft_memccpy.o
+Warning: Not a valid file
 Norme: ./author
+Warning: Not a valid file
+Norme: ./ft_isalnum.o
+Warning: Not a valid file
+Norme: ./ft_putstr.o
+Warning: Not a valid file
+Norme: ./ft_strrchr.o
+Warning: Not a valid file
+Norme: ./ft_memalloc.o
+Warning: Not a valid file
+Norme: ./ft_strclr.o
+Warning: Not a valid file
+Norme: ./ft_strlcat.o
+Warning: Not a valid file
+Norme: ./ft_strsub.o
+Warning: Not a valid file
+Norme: ./ft_strstr.o
+Warning: Not a valid file
+Norme: ./ft_strmap.o
+Warning: Not a valid file
+Norme: ./ft_isdigit.o
+Warning: Not a valid file
+Norme: ./ft_strncmp.o
+Warning: Not a valid file
+Norme: ./ft_putchar.o
+Warning: Not a valid file
+Norme: ./ft_toupper.o
+Warning: Not a valid file
+Norme: ./ft_striteri.o
+Warning: Not a valid file
+Norme: ./ft_memdel.o
+Warning: Not a valid file
+Norme: ./ft_isupper.o
+Warning: Not a valid file
+Norme: ./ft_strsize.o
+Warning: Not a valid file
+Norme: ./ft_bzero.o
+Warning: Not a valid file
+Norme: ./ft_strlen.o
+Warning: Not a valid file
+Norme: ./ft_striter.o
+Warning: Not a valid file
+Norme: ./ft_tolower.o
+Warning: Not a valid file
+Norme: ./ft_putchar_fd.o
+Warning: Not a valid file
+Norme: ./ft_strncat.o
+Warning: Not a valid file
+Norme: ./ft_strequ.o
 Warning: Not a valid file
 Norme: ./libft.h.gch
 Warning: Not a valid file
 Norme: ./a.out
+Warning: Not a valid file
+Norme: ./ft_putstr_fd.o
+Warning: Not a valid file
+Norme: ./ft_strcmp.o
+Warning: Not a valid file
+Norme: ./ft_strnequ.o
+Warning: Not a valid file
+Norme: ./ft_strcpy.o
+Warning: Not a valid file
+Norme: ./ft_strnstr.o
 Warning: Not a valid file
 Norme: ./ft_strrchr.c
 Error (line 15): Space before function name
@@ -45,6 +143,8 @@ Error (line 34): C++ comment
 Error (line 35): C++ comment
 Error (line 36): C++ comment
 Error (line 37): C++ comment
+Norme: ./ft_strncpy.c
+Error (line 17, col 7): bad spacing
 Norme: ./ft_striter.c
 Error: 42 header not at top of the file
 Error (line 5): bad indentation
@@ -52,19 +152,13 @@ Error (line 6): bad indentation
 Error (line 7): bad indentation
 Error (line 8): bad indentation
 Error (line 9): bad indentation
-Norme: ./ft_strncpy.c
-Error (line 17, col 7): bad spacing
 Norme: ./ft_isdigit.c
 Norme: ./ft_strstr.c
 Error (line 24): bad indentation
 Error (line 28, col 23): space before [
-Error (line 44): declarations in main are bad aligned
-Error (line 44): declarations must be followed by one empty line in main
-Error (line 46): 3 instructions
-Error (line 46): must begin only by tabulations
-Error (line 46): line has 166 characters
-Error (line 46, col 7): haystack is instanciated during declaration
 Norme: ./ft_isupper.c
+Norme: ./temp/ft_strsplit.c
+Warning: /nfs/2017/g/ggladkov/libft/temp/ft_strsplit.c may not compile or is invalid for some reasons.
 Norme: ./ft_putnbr.c
 Norme: ./ft_memccpy.c
 Error (line 30): C++ comment
@@ -80,6 +174,19 @@ Norme: ./temp/main.c
 Error: 42 header not at top of the file
 Norme: ./temp/ft_strnew.c
 Warning: /nfs/2017/g/ggladkov/libft/temp/ft_strnew.c may not compile or is invalid for some reasons.
+Norme: ./temp/ft_strstr.c
+Error (line 24): bad indentation
+Error (line 28, col 23): space before [
+Error (line 44): declarations in main are bad aligned
+Error (line 44): declarations must be followed by one empty line in main
+Error (line 46): 3 instructions
+Error (line 46): must begin only by tabulations
+Error (line 46): line has 166 characters
+Error (line 46, col 7): haystack is instanciated during declaration
+Norme: ./ft_strdel.c
+Error: 42 header not at top of the file
+Error (line 5): bad indentation
+Error (line 6): bad indentation
 Norme: ./temp/ft_strmapi.c
 Error: 42 header not at top of the file
 Error (line 3): declarations in ft_strmapi are bad aligned
@@ -96,19 +203,17 @@ Error (line 14): bad indentation
 Error (line 15): bad indentation
 Error (line 16): bad indentation
 Error (line 17): bad indentation
-Norme: ./ft_strdel.c
+Norme: ./ft_memchr.c
+Warning: /nfs/2017/g/ggladkov/libft/ft_memchr.c may not compile or is invalid for some reasons.
+Norme: ./temp/libft.h
+Error (line 45, col 4): bad spacing
+Norme: ./ft_strsize.c
 Error: 42 header not at top of the file
 Error (line 5): bad indentation
-Error (line 6): bad indentation
-Norme: ./temp/ft_strstr.c
-Error (line 24): bad indentation
-Error (line 28, col 23): space before [
-Error (line 44): declarations in main are bad aligned
-Error (line 44): declarations must be followed by one empty line in main
-Error (line 46): 3 instructions
-Error (line 46): must begin only by tabulations
-Error (line 46): line has 166 characters
-Error (line 46, col 7): haystack is instanciated during declaration
+Error (line 7): bad indentation
+Error (line 8): bad indentation
+Error (line 9): bad indentation
+Error (line 10): bad indentation
 Norme: ./ft_bzero.c
 Error (line 31): C++ comment
 Error (line 32): C++ comment
@@ -120,16 +225,10 @@ Error (line 37): C++ comment
 Error (line 38): C++ comment
 Error (line 39): C++ comment
 Error (line 40): C++ comment
-Norme: ./ft_strsize.c
-Error: 42 header not at top of the file
-Error (line 5): bad indentation
-Error (line 7): bad indentation
-Error (line 8): bad indentation
-Error (line 9): bad indentation
-Error (line 10): bad indentation
+Norme: ./ft_isalnum.c
+Error (line 17): line has 84 characters
 Norme: ./ft_putstr_fd.c
 Norme: ./ft_toupper.c
-Norme: ./ft_strcpy.c
 Norme: ./ft_strdup.c
 Error (line 26): C++ comment
 Error (line 27): C++ comment
@@ -140,6 +239,9 @@ Error (line 31): C++ comment
 Error (line 32): C++ comment
 Error (line 33): C++ comment
 Error (line 34): C++ comment
+Norme: ./ft_strcpy.c
+Norme: ./libft.h
+Error (line 44, col 4): bad spacing
 Norme: ./ft_striteri.c
 Error: 42 header not at top of the file
 Error (line 5): bad indentation
@@ -149,8 +251,11 @@ Error (line 9): bad indentation
 Error (line 10): bad indentation
 Error (line 11): bad indentation
 Error (line 12): bad indentation
-Norme: ./libft.h
-Error (line 45, col 4): bad spacing
+Norme: ./ft_putendl_fd.c
+Norme: ./ft_memdel.c
+Error: 42 header not at top of the file
+Error (line 5): bad indentation
+Error (line 6): bad indentation
 Norme: ./ft_strmap.c
 Error: 42 header not at top of the file
 Error (line 3): declarations in ft_strmap are bad aligned
@@ -169,14 +274,7 @@ Error (line 14): bad indentation
 Error (line 15): bad indentation
 Error (line 16): bad indentation
 Error (line 17): bad indentation
-Norme: ./ft_putendl_fd.c
-Norme: ./ft_memdel.c
-Error: 42 header not at top of the file
-Error (line 5): bad indentation
-Error (line 6): bad indentation
 Norme: ./ft_putchar.c
-Norme: ./ft_isascii.c
-Norme: ./ft_strlen.c
 Norme: ./ft_strnstr.c
 Error: 42 header not at top of the file
 Error (line 3): declarations in ft_strnstr are bad aligned
@@ -190,37 +288,27 @@ Error (line 21): bad indentation
 Error (line 22): bad indentation
 Error (line 23): bad indentation
 Error (line 24): bad indentation
+Norme: ./ft_isascii.c
+Norme: ./ft_strlen.c
 Norme: ./ft_strnew.c
-Warning: /nfs/2017/g/ggladkov/libft/ft_strnew.c may not compile or is invalid for some reasons.
-Norme: ./ft_memalloc.c
-Norme: ./ft_putendl.c
-Norme: ./ft_strsub.c
 Error: 42 header not at top of the file
-Error (line 3): declarations in ft_strsub are bad aligned
 Error (line 3): Space before function name
 Error (line 5): bad indentation
-Error (line 6): bad indentation
+Error (line 7): bad indentation
 Error (line 8): bad indentation
-Error (line 8): must begin only by tabulations
-Error (line 9): bad indentation
-Error (line 9): must begin only by tabulations
-Error (line 10): bad indentation
-Error (line 10): must begin only by tabulations
-Error (line 11): bad indentation
-Error (line 11): must begin only by tabulations
-Error (line 12): bad indentation
-Error (line 13): bad indentation
-Error (line 14): bad indentation
-Error (line 15): bad indentation
-Error (line 16): bad indentation
-Norme: ./ft_putchar_fd.c
-Norme: ./ft_strncmp.c
+Norme: ./ft_memalloc.c
+Norme: ./ft_strsub.c
+Norme: ./ft_putendl.c
+Norme: ./ft_strncat.c
 Norme: ./ft_strequ.c
 Error (line 22, col 2): missing space after if
-Norme: ./ft_strncat.c
+Norme: ./ft_strncmp.c
+Norme: ./ft_putchar_fd.c
 Norme: ./ft_isalpha.c
 Norme: ./ft_memset.c
+Norme: ./ft_itoa.c
 Norme: ./ft_strcat.c
+Norme: ./ft_tolower.c
 Norme: ./ft_strqu.c
 Error: 42 header not at top of the file
 Error (line 6): bad indentation
@@ -236,7 +324,6 @@ Error (line 24): bad indentation
 Error (line 26): bad indentation
 Error (line 28): bad indentation
 Error (line 30): bad indentation
-Norme: ./ft_tolower.c
 Norme: ./ft_strnequ.c
 Error: 42 header not at top of the file
 Error (line 5): bad indentation
@@ -265,7 +352,7 @@ Error (line 3): declarations in ft_strmapi are bad aligned
 Error (line 3): Space before function name
 Error (line 5): bad indentation
 Error (line 6): bad indentation
-Error (line 8): bad indentation
+Error (line 7): bad indentation
 Error (line 9): bad indentation
 Error (line 10): bad indentation
 Error (line 11): bad indentation
@@ -275,5 +362,7 @@ Error (line 14): bad indentation
 Error (line 15): bad indentation
 Error (line 16): bad indentation
 Error (line 17): bad indentation
+Error (line 18): bad indentation
+Error (line 19): bad indentation
 Norme: ./ft_isprint.c
 Norme: ./ft_strchr.c

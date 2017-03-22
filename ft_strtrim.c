@@ -1,32 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 21:17:48 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/21 21:19:07 by ggladkov         ###   ########.fr       */
+/*   Created: 2017/03/21 17:04:20 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/03/21 21:23:51 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*rm_whitespace(char *s)
 {
-	unsigned int	i;
-	char			*new;
-	char			size;
+	int 	i;
+
+	i = 0;
+	if ((s[i] == ' ') || (s[i] == '\t') || (s[i] == '\n'))
+		while ((s[i] == ' ') || (s[i] == '\t') || (s[i] == '\n'))
+			s[i++] = '\0';
+	return (&s[i]);
+}
+
+char	*rm_endwhite(char *s)
+{
+	int 	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	i--;
+	while ((s[i] == ' ') || (s[i] == '\t') || (s[i] == '\n'))
+		s[i--] = '\0';
+	return (s);
+}
+
+char	*ft_strtrim(char const *s)
+{
+	int		i;
+	char	*new;
+	int		size;
 
 	i = 0;
 	size = ft_strsize((char *)s);
 	new = (char *)malloc(sizeof(char) * (size + 1));
 	if (!new)
 		return (NULL);
-	while (s[i])
+	while (s[i] != '\0')
 	{
-		new[i] = f(i, s[i]);
+		new[i] = s[i];
 		i++;
 	}
+	new = rm_whitespace(new);
+	new = rm_endwhite(new);
 	return (new);
 }

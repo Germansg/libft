@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 13:42:57 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/21 14:37:12 by ggladkov         ###   ########.fr       */
+/*   Created: 2017/03/21 14:38:07 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/03/21 15:13:00 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t i;
-	unsigned char *str;
-	unsigned char f;
+	unsigned char *str1;
+	unsigned char *str2;
 
-	str = (unsigned char *)s;
-	f = (unsigned char)c;
 	i = 0;
-	while (str[i] && i < n)
-	{
-		if (str[i] == f)
-			return (&str[i]);
-		else
-			i++;
-	}
-	return (NULL);
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	if (n == 0)
+		return (0);
+	while ((str1[i] - str2[i]) == 0 && str2[i] != '\0' && i < n)
+		i++;
+	return (str1[i] - str2[i]);
 }
