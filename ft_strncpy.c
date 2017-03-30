@@ -15,18 +15,13 @@
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	char *dstptr;
+	char *srcptr;
 
 	dstptr = dst;
-	if (!src || !dst)
-			return (NULL);
-	if (len == 0)
-			return (NULL);
-	while (*src && len--)
-		*dstptr++ = *src++;
-	if (len > 0)
-	{
-		while (len--)
-			*dstptr++ = '\0';
-	}	
+	srcptr = (char *)src;
+	while (*srcptr && len--)
+		*dstptr++ = *srcptr++;
+	while (len--)
+		*dstptr++ = '\0';
 	return (dst);
 }

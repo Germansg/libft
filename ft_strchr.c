@@ -15,8 +15,14 @@
 char	*ft_strchr(const char *s, int c)
 {
 	int i;
+	int len;
+	char *string;
 
 	i = 0;
+	string = (char *)s;
+	len = ft_strlen(string);
+	if ((char)c == '\0')
+		return (&string[len]);
 	while (s[i])
 	{
 		if (s[i] == (char)c)
