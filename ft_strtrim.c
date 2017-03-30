@@ -6,24 +6,26 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:04:20 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/21 21:23:51 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/03/27 23:15:40 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*rm_whitespace(char *s)
+int	findstart(char const *s)
 {
 	int 	i;
 
 	i = 0;
 	if ((s[i] == ' ') || (s[i] == '\t') || (s[i] == '\n'))
 		while ((s[i] == ' ') || (s[i] == '\t') || (s[i] == '\n'))
-			s[i++] = '\0';
-	return (&s[i]);
+			i++;
+	if (s[i] == '\0')
+		return (-1);
+	return (i);
 }
 
-char	*rm_endwhite(char *s)
+int	findend(char const *s)
 {
 	int 	i;
 
@@ -32,27 +34,36 @@ char	*rm_endwhite(char *s)
 		i++;
 	i--;
 	while ((s[i] == ' ') || (s[i] == '\t') || (s[i] == '\n'))
-		s[i--] = '\0';
-	return (s);
+		i--;
+	if (s[i] == '\0')
+		return (0);
+	return (i);
 }
 
 char	*ft_strtrim(char const *s)
 {
-	int		i;
+	int		start;
+	int		end;
 	char	*new;
-	int		size;
+	int		i;
 
 	i = 0;
-	size = ft_strsize((char *)s);
-	new = (char *)malloc(sizeof(char) * (size + 1));
+	start = findstart(s);
+	end = findend(s);
+	if (!*s)
+	{
+		new = (char *)s;
+		return (new);
+	}
+	new = (char *)malloc(sizeof(char) * ((end - start) + 2));
 	if (!new)
 		return (NULL);
-	while (s[i] != '\0')
+	while (start <= end)
 	{
-		new[i] = s[i];
+		new[i] = s[start];
 		i++;
+		start++;
 	}
-	new = rm_whitespace(new);
-	new = rm_endwhite(new);
+	new[i] = '\0';
 	return (new);
 }

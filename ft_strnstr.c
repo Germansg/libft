@@ -2,9 +2,9 @@
 
 char *ft_strnstr(const char *pod, const char *pea, size_t len)
 {
-	size_t i;
-	size_t j;
-	int mark;
+	size_t	i;
+	size_t	j;
+	int		mark;
 
 	i = 0;
 	if (*pea == '\0')
@@ -14,16 +14,16 @@ char *ft_strnstr(const char *pod, const char *pea, size_t len)
 		j = 0;
 		if (pod[i] == pea[j])
 		{
-				mark = i;
-				while (pod[i] == pea[j] && pea[j])
-				{
-						i++;
-						j++;
-						if (pea[j + 1] == '\0')
-								return ((char *)pod + mark);
-				}
+			mark = i;
+			while (pod[i] == pea[j] && pea[j] && i < len)
+			{
+				i++;
+				j++;
+				if (pea[j] == '\0')
+					return ((char *)pod + mark);
+			}
 		}
-		i++;
+	i++;
 	}
 	return (NULL);
 }

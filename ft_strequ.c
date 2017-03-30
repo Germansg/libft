@@ -6,20 +6,20 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/16 08:05:16 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/16 08:16:38 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/03/24 11:49:44 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strequ(char const *s1, char const *s2)
+int	ft_strequ(char const *s1, char const *s2)
 {
 	int i;
 
 	i = 0;
 	while (*s1 && *s2)
 	{
-		if(*s1 != *s2)
+		if (*s1 != *s2)
 			return (0);
 		s1++;
 		s2++;

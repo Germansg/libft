@@ -6,7 +6,7 @@
 /*   By: ggladkov <ggladkov@42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/20 19:58:34 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/20 20:09:42 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/03/26 19:47:19 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	freshy_fresh = (char *)malloc(sizeof(char) * (len + 1));
 	if (!freshy_fresh)
 		return (NULL);
-	while (s[i] && start < len)
+	while (s[i] && len)
 	{
-		freshy_fresh[start] = s[i];
+		freshy_fresh[i++] = s[start];
 		start++;
+		len--;
 	}
+	freshy_fresh[i] = '\0';
 	return (freshy_fresh);
 }

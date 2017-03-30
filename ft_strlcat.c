@@ -1,37 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ggladkov <ggladkov@42.us.org>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/03/24 11:35:49 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/03/27 18:56:14 by ggladkov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-		size_t i;
-		size_t j;
+	size_t i;
+	size_t j;
 
-		i = 0;
-		j = 0;
-		while(dst[i++])
-		while(src[j])
-		{
-			if (i == size)
-					dst[i + 1] = '\0';
-			dst[i] = src[j];
+	i = 0;
+	j = 0;
+	while (dst[i] && i < size)
+	{	
+			if (src[i] == '\0')
+					return (ft_strlen(src) + size);
 			i++;
-			j++;
-		}
-		return (i);
+	}
+	while (src[j] && i < size && dst[i])
+	{
+			if (src[i] == '\0')
+					return (ft_strlen(src) + size);
+		dst[i] = src[j];
+		i++;
+		j++;
+	}
+	return (ft_strlen(src) + size);
 }
-
-//int main(void)
-//{
-//
-//		char *str1 = "one two ";
-//		char *str2 = "three four\n";
-//		char *str3 = "one two ";
-//		char *str4 = "three four\n";
-//		size_t length;
-//		size_t length2;
-//
-//		length = ft_strlcat(str1, str2, 50);
-//		length2 = strlcat(str3, str4, 50);
-//
-//		printf("the lenght of the string is u the full string: %s\n", str1);
-//		printf("the lenght of the string is u the full string: %s\n", str3);
-//}

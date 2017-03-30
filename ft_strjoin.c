@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/16 08:30:03 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/21 21:20:39 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/03/27 21:00:50 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,27 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*freshy_fresh;
 	int		size1;
 	int		size2;
+	int i;
+	int j;
 
-	size1 = ft_strsize((char *)s1);
-	size2 = ft_strsize((char *)s2);
-	freshy_fresh = (char *)malloc(sizeof(char) * (size1 + size2));
+	i = 0;
+	j = 0;
+	size1 = ft_strlen(s1);
+	size2 = ft_strlen(s2);
+	freshy_fresh = (char *)malloc(sizeof(char) * ((size1 + size2) + 1));
 	if (!freshy_fresh)
 		return (NULL);
-	while (*s1)
+	while (s1[i])
 	{
-		*freshy_fresh = *s1;
-		freshy_fresh++;
-		s1++;
+		freshy_fresh[i] = s1[i];
+		i++;
 	}
-	while (*s2)
+	while (s2[j])
 	{
-		*freshy_fresh = *s2;
-		freshy_fresh++;
-		s2++;
+		freshy_fresh[i] = s2[j];
+		i++;
+		j++;
 	}
+	freshy_fresh[i] = '\0';
 	return (freshy_fresh);
 }

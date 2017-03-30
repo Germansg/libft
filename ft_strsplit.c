@@ -6,18 +6,14 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 15:20:21 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/21 21:28:26 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/03/28 14:28:02 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
 
-int		ft_wrdcount(const char *str)
+int		ft_wrdcount(const char *str, char c)
 {
 	size_t i;
 	int count;
@@ -26,10 +22,11 @@ int		ft_wrdcount(const char *str)
 	count = 0;
 	while (str[i])
 	{
-		if (ft_isalpha(str[i]) == 1)
+		if (str[i] !=  c)
 		{
 			count++;
-			while (ft_isalpha(str[i]) == 1)
+			i++;
+			while (str[i] != c && str[i] != '\0')
 				i++;
 		}
 		else
@@ -38,7 +35,7 @@ int		ft_wrdcount(const char *str)
 	return (count);
 }
 
-int		ft_chrcount(const char *str)
+int		ft_chrcount(const char *str, char c)
 {
 	size_t i;
 	int count;
@@ -47,7 +44,7 @@ int		ft_chrcount(const char *str)
 	count = 0;
 	while (str[i])
 	{
-		if (ft_isalpha(str[i]) == 1)
+		if (str[i] != c)
 			count++;
 		else
 			i++;
@@ -63,15 +60,15 @@ char	**ft_strsplit(char const *s, char *c)
 	char **new;
 
 	i = 0;
-	w = ft_wrdcount(s);
-	l = ft_chrcount(s);
+	w = ft_wrdcount(s, *c);
+	l = ft_chrcount(s, *c);
 	new = (char **)malloc(sizeof(char) * w * l);
 	if (!new)
 		return (NULL);
-	while (s[i++])
+	while (s[i])
 	{
 		if (s[i] != *c)
-			new[w][l] = s[i];
+			new[w][l++] = s[i];
 		else if (s[i] == *c)
 		{
 			w++;
@@ -79,6 +76,7 @@ char	**ft_strsplit(char const *s, char *c)
 			while (s[i] == *c)
 				i++;
 		}
+		i++;
 	}
 	return (new);
 }
