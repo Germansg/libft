@@ -15,20 +15,23 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t i;
-	size_t len;
+	size_t j;
 
 	i = 0;
-	len = ft_strlen(dst);
-	if (size <= len)
-		return (ft_strlen(src) + size);
-	while (dst[i])
+	j = 0;
+	while (dst[i] && i < size)
+	{	
+			if (src[i] == '\0')
+					return (ft_strlen(src) + size);
 			i++;
-	while (*src && i < (size - 1))
-	{
-		dst[i] = *src;
-		i++;
-		src++;
 	}
-	dst[i] = '\0';
-	return (ft_strlen(src) + size - 1);
+	while (src[j] && i < size && dst[i])
+	{
+			if (src[i] == '\0')
+					return (ft_strlen(src) + size);
+		dst[i] = src[j];
+		i++;
+		j++;
+	}
+	return (ft_strlen(src) + size);
 }
