@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	findstart(char const *s)
+static int	findstart(char const *s)
 {
 	int 	i;
 
@@ -25,7 +25,7 @@ int	findstart(char const *s)
 	return (i);
 }
 
-int	findend(char const *s)
+static	int	findend(char const *s)
 {
 	int 	i;
 

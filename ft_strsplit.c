@@ -12,71 +12,90 @@
 
 #include "libft.h"
 
-
-int		ft_wrdcount(const char *str, char c)
-{
-	size_t i;
-	int count;
-
-	i = 0;
-	count = 0;
-	while (str[i])
-	{
-		if (str[i] !=  c)
-		{
-			count++;
-			i++;
-			while (str[i] != c && str[i] != '\0')
-				i++;
-		}
-		else
-			i++;
-	}
-	return (count);
-}
-
-int		ft_chrcount(const char *str, char c)
-{
-	size_t i;
-	int count;
-
-	i = 0;
-	count = 0;
-	while (str[i])
-	{
-		if (str[i] != c)
-			count++;
-		else
-			i++;
-	}
-	return (count);
-}
-
-char	**ft_strsplit(char const *s, char *c)
+static	size_t	my_wrdlen(char const *str, char c)
 {
 	int i;
-	int w;
-	int l;
-	char **new;
+	size_t len;
 
 	i = 0;
-	w = ft_wrdcount(s, *c);
-	l = ft_chrcount(s, *c);
-	new = (char **)malloc(sizeof(char) * w * l);
-	if (!new)
-		return (NULL);
-	while (s[i])
+	len = 0;
+	while (str[i] != c && str[i])
 	{
-		if (s[i] != *c)
-			new[w][l++] = s[i];
-		else if (s[i] == *c)
-		{
-			w++;
-			l = 0;
-			while (s[i] == *c)
-				i++;
-		}
+		len++;
 		i++;
 	}
+	return(len);
+}
+		
+static	char *copy_next(char const *str, char c)
+{
+	char *word;
+	int i;
+
+	i = 0;
+	word = (char *)malloc(sizeof(*word) * my_wrdlen(str, c));
+	if (word)
+		return (NULL);
+	while (str[i] != c && str[i])
+	{
+		word[i] = str[i];
+		i++;
+	}
+	word[i] = '\0';
+	return (word);
+}
+
+static	size_t	word_count(char const *str, char c)
+{
+	int i;
+	size_t count;
+
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		if (str[i] != c && str[i])
+		{
+			count++;
+			i++;
+		}
+		while (str[i] != c && str[i])
+			i++;
+		while (str[i] == c && str[i])
+			i++;
+	}
+	return (count);
+}
+
+char	**ft_strsplit(char const *s, char c)
+{
+	size_t i;
+	size_t word_index;
+	char **new;
+	size_t count;
+
+	if (!s || !c)
+		return (NULL);
+	i = 0;
+	word_index = 0;
+	count = word_count(s, c);
+	new = (char **)malloc(sizeof(*new) * (word_count(s, c) + 2));
+	if (!new)
+		return (new);
+	if (s[i] != c)
+	{
+		new[word_index] = copy_next(&s[i], c);
+		word_index++;
+		i = i + my_wrdlen(&s[i], c);
+	}
+	while (s[i] && word_index < count)
+	{
+		while (s[i] == c)
+			i++;
+		new[word_index] = copy_next(&s[i], c);
+		word_index++;
+		i = i + my_wrdlen(&s[i], c);
+	}
+	new[word_index] = NULL;
 	return (new);
 }

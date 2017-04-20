@@ -16,25 +16,32 @@ char	*ft_strstr(const char *big, const char *little)
 {
 	int		i;
 	int		j;
-	int		mark;
+	char *	mark;
+	char *	bigptr;
 
 	i = 0;
 	j = 0;
+	bigptr = (char *)big;
 	if (*little == '\0')
-		return ((char *)big);
-	while (big[i] != '\0')
+		return (bigptr);
+	while (*bigptr)
 	{
 		j = 0;
-		if (big[i] == little[j])
+		if (*bigptr == little[j])
 		{
-			mark = i;
-			while (big[i++] == little[j++])
+			mark = bigptr;
+			while (*bigptr == little[j])
 			{
+				j++;
+				bigptr++;
 				if (!little[j])
-					return ((char *)big + mark);
+					return (mark);
 			}
 		}
 		i++;
+		mark = NULL;
+		bigptr = (char *)big;
+		bigptr += i;
 	}
 	return (NULL);
 }

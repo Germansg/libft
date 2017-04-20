@@ -9,7 +9,7 @@ char *ft_strnstr(const char *pod, const char *pea, size_t len)
 	i = 0;
 	if (*pea == '\0')
 			return ((char *)pod);
-	while (i < len)
+	while (i < len + 1)
 	{
 		j = 0;
 		if (pod[i] == pea[j])
