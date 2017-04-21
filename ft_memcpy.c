@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 20:39:26 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/24 22:06:20 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/20 19:24:38 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-	

@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/07 14:29:30 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/16 08:18:11 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/20 19:23:34 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
-	int len;
-	char *string;
+	int		i;
+	int		len;
+	char	*string;
 
 	i = 0;
 	string = (char *)s;

@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 20:51:37 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/25 00:59:26 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/20 19:22:55 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		while (len--) 
+		while (len--)
 			*tempdst++ = *tempsrc++;
 	}
 	return (dst);

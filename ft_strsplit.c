@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 15:20:21 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/28 14:28:02 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/20 20:15:41 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static	size_t	my_wrdlen(char const *str, char c)
 {
-	int i;
-	size_t len;
+	int		i;
+	size_t	len;
 
 	i = 0;
 	len = 0;
@@ -24,13 +24,13 @@ static	size_t	my_wrdlen(char const *str, char c)
 		len++;
 		i++;
 	}
-	return(len);
+	return (len);
 }
-		
-static	char *copy_next(char const *str, char c)
+
+static	char	*copy_next(char const *str, char c)
 {
-	char *word;
-	int i;
+	char	*word;
+	int		i;
 
 	i = 0;
 	word = (char *)malloc(sizeof(*word) * my_wrdlen(str, c));
@@ -47,8 +47,8 @@ static	char *copy_next(char const *str, char c)
 
 static	size_t	word_count(char const *str, char c)
 {
-	int i;
-	size_t count;
+	int		i;
+	size_t	count;
 
 	i = 0;
 	count = 0;
@@ -69,18 +69,17 @@ static	size_t	word_count(char const *str, char c)
 
 char	**ft_strsplit(char const *s, char c)
 {
-	size_t i;
-	size_t word_index;
-	char **new;
-	size_t count;
+	size_t	i;
+	size_t	word_index;
+	char	**new;
+	size_t	count;
 
 	if (!s || !c)
 		return (NULL);
 	i = 0;
 	word_index = 0;
 	count = word_count(s, c);
-	new = (char **)malloc(sizeof(*new) * (word_count(s, c) + 2));
-	if (!new)
+	if (!(new = (char **)malloc(sizeof(*new) * (word_count(s, c) + 2))))
 		return (new);
 	if (s[i] != c)
 	{

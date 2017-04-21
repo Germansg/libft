@@ -6,21 +6,31 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/04 19:25:19 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/28 15:33:40 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/20 19:05:56 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *big, const char *little)
+static	char	*final_check(char *hay, const char *nee, int point, char *mark)
+{
+	while (*hay++ == nee[point])
+	{
+		point++;
+		if (!nee[point])
+			return (mark);
+	}
+	return (NULL);
+}
+
+char			*ft_strstr(const char *big, const char *little)
 {
 	int		i;
 	int		j;
-	char *	mark;
-	char *	bigptr;
+	char	*mark;
+	char	*bigptr;
 
 	i = 0;
-	j = 0;
 	bigptr = (char *)big;
 	if (*little == '\0')
 		return (bigptr);
@@ -30,15 +40,11 @@ char	*ft_strstr(const char *big, const char *little)
 		if (*bigptr == little[j])
 		{
 			mark = bigptr;
-			while (*bigptr == little[j])
-			{
-				j++;
-				bigptr++;
-				if (!little[j])
-					return (mark);
-			}
+			if (mark == final_check(bigptr, little, j, mark))
+				return (mark);
 		}
 		i++;
+		j++;
 		mark = NULL;
 		bigptr = (char *)big;
 		bigptr += i;

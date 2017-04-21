@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 18:21:48 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/27 10:11:41 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/20 19:15:51 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char *s2;
-	int i;
-	int size;
+	char	*s2;
+	int		i;
+	int		size;
 
 	size = ft_strlen(s1);
 	i = 0;
@@ -29,5 +29,5 @@ char	*ft_strdup(const char *s1)
 		i++;
 	}
 	s2[i] = '\0';
-	return &s2[0];
+	return (&s2[0]);
 }

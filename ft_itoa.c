@@ -6,7 +6,7 @@
 /*   By: ggladkov <ggladkov@42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 08:28:49 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/21 14:00:51 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/20 19:46:32 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 static	int	zero_check(int nmb)
 {
 	if (nmb == 0 || nmb == -0)
-		return(1);
+		return (1);
 	else
-		return(0);
+		return (0);
 }
 
 static int	st_intlen(int value)
@@ -48,7 +48,7 @@ static char	*st_intmax(void)
 	return (buf);
 }
 
-char *ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int temporary;
 	int length;
@@ -86,7 +86,7 @@ char *ft_itoa(int n)
 		result[0] = '-';
 		return (result);
 	}
-		return (result + 1);
+	return (result + 1);
 }
 //	
 //static int main(int argc, char **argv)
