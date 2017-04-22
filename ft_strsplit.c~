@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 15:20:21 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/04/21 13:09:28 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/21 02:50:20 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,28 +67,32 @@ static	size_t	word_count(char const *str, char c)
 	return (count);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
 	size_t	i;
 	size_t	word_index;
 	char	**new;
 	size_t	count;
 
+	if (*s == '\0' || c == '\0')
+		return (NULL);
 	i = 0;
 	word_index = 0;
 	count = word_count(s, c);
 	if (!(new = (char **)malloc(sizeof(*new) * (word_count(s, c) + 2))))
 		return (new);
-	if (s[i] != c && count)
+	if (s[i] != c)
 	{
-		new[word_index++] = copy_next(&s[i], c);
+		new[word_index] = copy_next(&s[i], c);
+		word_index++;
 		i = i + my_wrdlen(&s[i], c);
 	}
 	while (s[i] && word_index < count)
 	{
 		while (s[i] == c)
 			i++;
-		new[word_index++] = copy_next(&s[i], c);
+		new[word_index] = copy_next(&s[i], c);
+		word_index++;
 		i = i + my_wrdlen(&s[i], c);
 	}
 	new[word_index] = NULL;

@@ -6,9 +6,10 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/20 19:14:01 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/04/21 01:49:34 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/21 01:59:10 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strnstr(const char *pod, const char *pea, size_t len)

@@ -6,9 +6,10 @@
 /*   By: ggladkov <ggladkov@42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/24 11:35:49 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/04/20 22:41:34 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/21 14:04:44 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
