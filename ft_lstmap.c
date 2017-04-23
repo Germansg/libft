@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/07 14:31:25 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/04/20 20:53:55 by ggladkov         ###   ########.fr       */
+/*   Created: 2017/04/20 17:00:28 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/04/23 13:40:27 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	size_t	i;
+	t_list *new;
+	t_list *start;
 
-	i = 0;
-	if ((ft_strlen(s1) == 0) || (ft_strlen(s2) == 0))
-		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-	while ((s1[i] || s2[i]) && i < n)
+	if (!lst || !f)
+		return (NULL);
+	if (!(new = (t_list *)malloc(sizeof(t_list))))
+		return (NULL);
+	new = f(lst);
+	start = new;
+	while (lst->next)
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
+		if (!(new->next = (t_list *)malloc(sizeof(t_list))))
+			return (NULL);
+		lst = lst->next;
+		new->next = f(lst);
+		new = new->next;
 	}
-	return (0);
+	return (start);
 }

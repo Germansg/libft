@@ -6,82 +6,64 @@
 /*   By: ggladkov <ggladkov@42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 08:28:49 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/21 14:00:51 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/23 13:41:40 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <xlocale.h>
-#include <stdlib.h>
 #include "libft.h"
-#include <stdio.h>
 
-int		my_strlen(char *str)
+static	size_t	num_length(int num)
 {
-	int len;
+	size_t	len;
 
 	len = 0;
-	while (*str)
+	if (num < 0)
+		num = -num;
+	while (num > 0)
 	{
-		str++;
 		len++;
+		num /= 10;
 	}
 	return (len);
 }
 
-char	*ft_strrev(char *str)
+static int		check_neg(int *num, size_t *len)
 {
-	int		i;
-	int		len;
-	char	*temp;
-
-	len = my_strlen(str);
-	i = 0;
-	temp = (char *)malloc(sizeof(char) * (len + 1));
-	if (!temp)
-		return (NULL);
-	while (len > 0)
-		temp[i++] = str[len--];
-	return (temp);
-}
-
-int		my_get_length(int nbr)
-{
-	int length;
-
-	length = 0;
-	while (nbr != 0)
+	if (*num < 0)
 	{
-		nbr /= 10;
-		length++;
+		*len += 1;
+		*num *= -1;
+		return (1);
 	}
-	return (length);
+	else
+		return (0);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	char	*fresh;
+	char	*result;
+	size_t	len;
 	int		neg;
-	int		length;
-	int		i;
-	char	*buf;
 
-	i = 0;
-	neg = 0;
-	if (n < 0)
-		neg = 1;
-	length = my_get_length(n);
-	fresh = (char *)malloc(sizeof(char) * (length + 1));
-	if (!fresh)
-		return (NULL);
-	while (n > 0)
+	if (n == 0 || n == -0)
+		return (ft_strdup("0"));
+	if ((long)n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	len = num_length(n);
+	neg = check_neg(&n, &len);
+	result = ft_strnew(len);
+	if (!result)
+		return (result);
+	result[len] = '\0';
+	len--;
+	while (len)
 	{
-		fresh[i] = (n % 10) + '0';
+		result[len] = (n % 10) + '0';
 		n /= 10;
-		i++;
+		len--;
 	}
+	result[0] = (n % 10) + '0';
 	if (neg == 1)
-		fresh[i] = '-';
-	buf = ft_strrev(fresh);
-	return (buf);
+		result[0] = '-';
+	return (result);
 }

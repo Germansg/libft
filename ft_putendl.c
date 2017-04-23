@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 23:42:08 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/02/27 23:54:19 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/23 10:54:04 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl(char const *s)
 {
+	if (!s)
+		return ;
 	while (*s)
 		write(1, s++, 1);
 	write(1, "\n", 1);

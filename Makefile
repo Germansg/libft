@@ -12,7 +12,7 @@
 
 NAME = libft.a
 
-FLAGS = -Wall -Wextra -Werror -I. -c
+FLAGS = -Wall -Wextra -Werror  -I. -c
 
 SRCS = *.c
 

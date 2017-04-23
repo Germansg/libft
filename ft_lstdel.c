@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggladkov <ggladkov@42.us.org>              +#+  +:+       +#+        */
+/*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/24 11:48:54 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/04/23 10:59:52 by ggladkov         ###   ########.fr       */
+/*   Created: 2017/04/20 19:42:08 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/04/20 19:46:56 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	char *new;
+	t_list *current;
+	t_list *that_one;
 
-	new = (char *)malloc(sizeof(char) * (size  + 1));
-	if (!new)
-		return (NULL);
-	ft_bzero((char *)new, size + 1);
-	return (new);
+	current = *alst;
+	while (current != NULL)
+	{
+		that_one = current->next;
+		del(current, current->content_size);
+		current = that_one;
+	}
+	*alst = NULL;
 }

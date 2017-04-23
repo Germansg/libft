@@ -6,15 +6,15 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:04:20 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/27 23:15:40 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/23 03:30:04 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	findstart(char const *s)
+static	int	findstart(char const *s)
 {
-	int 	i;
+	int	i;
 
 	i = 0;
 	if ((s[i] == ' ') || (s[i] == '\t') || (s[i] == '\n'))
@@ -25,9 +25,9 @@ int	findstart(char const *s)
 	return (i);
 }
 
-int	findend(char const *s)
+static	int	findend(char const *s)
 {
-	int 	i;
+	int	i;
 
 	i = 0;
 	while (s[i] != '\0')
@@ -40,7 +40,7 @@ int	findend(char const *s)
 	return (i);
 }
 
-char	*ft_strtrim(char const *s)
+char		*ft_strtrim(char const *s)
 {
 	int		start;
 	int		end;
@@ -48,6 +48,8 @@ char	*ft_strtrim(char const *s)
 	int		i;
 
 	i = 0;
+	if (!s)
+		return NULL;
 	start = findstart(s);
 	end = findend(s);
 	if (!*s)

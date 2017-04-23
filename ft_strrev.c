@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggladkov <ggladkov@42.us.org>              +#+  +:+       +#+        */
+/*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/24 11:48:54 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/04/23 10:59:52 by ggladkov         ###   ########.fr       */
+/*   Created: 2017/04/20 17:24:02 by ggladkov          #+#    #+#             */
+/*   Updated: 2017/04/20 17:24:06 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strrev(char *str)
 {
-	char *new;
+	int		i;
+	int		len;
+	char	*temp;
 
-	new = (char *)malloc(sizeof(char) * (size  + 1));
-	if (!new)
+	len = my_strlen(str);
+	i = 0;
+	temp = (char *)malloc(sizeof(char) * (len + 1));
+	if (!temp)
 		return (NULL);
-	ft_bzero((char *)new, size + 1);
-	return (new);
+	while (len > 0)
+		temp[i++] = str[len--];
+	return (temp);
 }

@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 12:53:41 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/28 23:14:22 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/20 19:53:55 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,20 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
-# include <stdio.h>
+
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
+
+t_list *ft_lstnew(void const *content, size_t content_size);
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstadd(t_list **alst, t_list *new);
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 void	*ft_memset(void *str, int c, size_t len);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
@@ -38,7 +51,8 @@ char	*ft_strcat(char *s1, const char *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
 char	*ft_strstr(const char *big, const char *little);
-char	**ft_strsplit(char const *s, char *c);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char	**ft_strsplit(char const *s, char c);
 char	*ft_strnstr(const char *bit, const char *little, size_t len);
 char	*ft_strnew(size_t size);
 void	ft_strdel(char **as);
@@ -71,7 +85,9 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(const char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr(char *str);
-int		isupper(int c);
+int		ft_isupper(int c);
 int		ft_strsize(char *str);
+char	*ft_strrev(char *str);
+int		my_strlen(char *str);
 
 #endif

@@ -19,5 +19,5 @@ int	ft_strsize(char *str)
 	size = 0;
 	while (*str++)
 		size++;
-return (size);
+	return (size);
 }
