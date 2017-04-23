@@ -6,11 +6,21 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 15:20:21 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/04/21 13:09:28 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/23 13:39:37 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static	size_t	my_skipc(char const *str, char c)
+{
+	size_t	i;
+
+	i = 0;
+	while (*str++ == c)
+		i++;
+	return (i);
+}
 
 static	size_t	my_wrdlen(char const *str, char c)
 {
@@ -32,8 +42,10 @@ static	char	*copy_next(char const *str, char c)
 	char	*word;
 	int		i;
 
+	if (!str)
+		return (NULL);
 	i = 0;
-	word = (char *)malloc(sizeof(*word) * my_wrdlen(str, c));
+	word = (char *)malloc(sizeof(*word) * (my_wrdlen(str, c) + 1));
 	if (!word)
 		return (NULL);
 	while (str[i] != c && str[i])
@@ -74,10 +86,12 @@ char			**ft_strsplit(char const *s, char c)
 	char	**new;
 	size_t	count;
 
+	if (!s || !c)
+		return (NULL);
 	i = 0;
 	word_index = 0;
 	count = word_count(s, c);
-	if (!(new = (char **)malloc(sizeof(*new) * (word_count(s, c) + 2))))
+	if (!(new = (char **)malloc(sizeof(*new) * (word_count(s, c) + 1))))
 		return (new);
 	if (s[i] != c && count)
 	{
@@ -86,11 +100,10 @@ char			**ft_strsplit(char const *s, char c)
 	}
 	while (s[i] && word_index < count)
 	{
-		while (s[i] == c)
-			i++;
+		i = i + my_skipc(&s[i], c);
 		new[word_index++] = copy_next(&s[i], c);
 		i = i + my_wrdlen(&s[i], c);
 	}
-	new[word_index] = NULL;
+	new[word_index] = (NULL);
 	return (new);
 }

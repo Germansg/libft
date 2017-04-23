@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 17:04:20 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/04/20 17:31:49 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/23 03:30:04 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ char		*ft_strtrim(char const *s)
 	int		i;
 
 	i = 0;
+	if (!s)
+		return NULL;
 	start = findstart(s);
 	end = findend(s);
 	if (!*s)

@@ -6,7 +6,7 @@
 /*   By: ggladkov <ggladkov@42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/24 11:34:37 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/04/22 23:09:44 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/23 13:39:16 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	int i;
-	unsigned char *ping;
-	unsigned char *pong;
+	int				i;
+	unsigned char	*ping;
+	unsigned char	*pong;
 
 	i = 0;
 	ping = (unsigned char *)s1;

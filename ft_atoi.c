@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/04 19:12:14 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/04/22 22:32:58 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/23 10:55:27 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_atoi(const char *str)
 {
 	int i;
 	int neg;
-	long num;
+	size_t num;
 
 	neg = 1;
 	num = 0;

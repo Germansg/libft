@@ -6,7 +6,7 @@
 /*   By: ggladkov <ggladkov@42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/24 11:46:28 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/24 11:46:36 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/23 09:40:10 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_memdel(void **ap)
 {
+	if (!ap)
+		return ;
 	free(*ap);
 	*ap = (NULL);
 }

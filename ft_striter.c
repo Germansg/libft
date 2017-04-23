@@ -6,7 +6,7 @@
 /*   By: ggladkov <ggladkov@42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/24 11:37:49 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/24 11:38:05 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/23 02:08:47 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
+	if (!s || !f)
+		return ;
 	while (*s)
 	{
 		f(s);

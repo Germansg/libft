@@ -6,7 +6,7 @@
 /*   By: ggladkov <ggladkov@42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/20 19:58:34 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/03/26 19:47:19 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/23 13:40:58 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	int unsigned	i;
 	char			*freshy_fresh;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	freshy_fresh = (char *)malloc(sizeof(char) * (len + 1));
 	if (!freshy_fresh)
