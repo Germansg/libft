@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/20 19:27:19 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/04/20 19:29:47 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/22 20:51:09 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 		freshy->content = malloc(sizeof(content));
 		if (freshy->content == NULL)
 			return (NULL);
-		freshy->content = memcpy(freshy->content, content, content_size);
+		freshy->content = ft_memcpy(freshy->content, content, content_size);
 		freshy->content_size = content_size;
 	}
 	freshy->next = NULL;

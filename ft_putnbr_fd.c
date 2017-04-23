@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 20:28:39 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/04/21 13:17:52 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/22 21:54:52 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putstr_fd("-2147483648", fd);
 		return ;
 	}
-	if (nbr < 0)
+	if (n < 0)
 	{
-		ft_putchar_fd(n + '0', fd);
+		ft_putchar_fd('-', fd);
 		n *= -1;
 	}
-	if (nbr < 10)
+	if (n < 10)
 		ft_putchar_fd(n + '0', fd);
 	else
 	{

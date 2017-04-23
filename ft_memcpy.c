@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 20:39:26 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/04/20 19:24:38 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/22 22:33:19 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	srccopy = (char *)src;
 	dstcopy = (char *)dst;
 	i = 0;
-	while (srccopy[i] && i < n)
+	while (i < n)
 	{
 		dstcopy[i] = srccopy[i];
 		i++;

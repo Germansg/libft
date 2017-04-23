@@ -6,7 +6,7 @@
 /*   By: ggladkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/20 17:00:28 by ggladkov          #+#    #+#             */
-/*   Updated: 2017/04/20 19:31:59 by ggladkov         ###   ########.fr       */
+/*   Updated: 2017/04/22 22:18:33 by ggladkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 
 	new = NULL;
 	link = NULL;
-	while (lst)
+	while (lst->next)
 	{
 		if (new == NULL)
 		{
@@ -30,6 +30,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 		{
 			link->next = f(lst);
 		}
+		link = link->next;
 	}
-	return (NULL);
+	return (new);
 }
